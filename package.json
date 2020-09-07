@@ -1,0 +1,27 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo src/main.js:build.js --live -t [ babelify --presets [ env ] ]",
+    "build": "browserify src/main.js -o build.js -t [ babelify --presets [ env ] ]"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeardedBry/game-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeardedBry/game-template/issues"
+  },
+  "homepage": "https://github.com/BeardedBry/game-template#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "budo": "^11.6.4"
+  }
+}
