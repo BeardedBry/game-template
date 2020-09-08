@@ -1,18 +1,8 @@
-//const gameType = "awesome";
-//alert(`Let's make ${ gameType } games!`);
+let clickers = 50;
+let startTime = Date.now();
 
-const myGuess = Math.floor(Math.random() * 20) + 1;
-let guesses = 0;
-let guess;
-
-while(guess !== myGuess) {
-    guess = parseInt(prompt('What number am I thinking of?'), 10);
-    guesses++;
-    if(guess < myGuess) {
-        alert('Higher.');
-    }else if (guess > myGuess) {
-        alert('Lower.');
-    }
+// position elements in dom
+function sync(dom, pos) {
+    dom.style.left = `${pos.x}px`;
+    dom.style.top = `${pos.y}px`;
 }
-
-alert(`Well done you got it in ${guesses} tries.`); 
