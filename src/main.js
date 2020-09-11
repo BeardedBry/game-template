@@ -1,44 +1,27 @@
-let clickers = 50;
-let startTime = Date.now();
+const canvas = document.querySelector("#board canvas");
+const ctx = canvas.getContext("2d");
+// console.log(ctx.canvas);
+// const deg2Rad = deg => (Math.PI / 180) * deg;
+// const rad2Deg = rad => (180 / Math.PI) * rad;
 
-// position elements in dom
-function sync(dom, pos) {
-    dom.style.left = `${pos.x}px`;
-    dom.style.top = `${pos.y}px`;
-    dom.style.width = '5rem';
-    //dom.style.height = '5rem';
-}
+ctx.strokeStyle="black";
+ctx.fillStyle="red";
 
-function addClicker(){
-    const pos = {
-        x: Math.random() * 500,
-        y: Math.random() * 300
-    };
+ctx.fillRect(300, 200, 50, 50);
+ctx.strokeRect(300,200,50,50);
 
-    const img = new Image();
-    img.src = "res/images/rick.png";
-    img.style.position = "absolute";
-    img.addEventListener("click", removeClicker, false);
+ctx.beginPath();
+ctx.arc(325, 170, 25, 0, Math.PI * 2, false);
+ctx.fill();
+ctx.stroke();
 
-    document.querySelector("#board").appendChild(img);
-    sync(img, pos);
-}
 
-function removeClicker(e) {
-    e.target.parentNode.removeChild(e.target);
-    clickers--;
-    checkGameOver();
-}
 
-function checkGameOver(){
-    document.querySelector('#remain').innerHTML = clickers;
-    if (clickers === 0){
-        const taken = Math.round((Date.now() - startTime) / 1000);
-        alert(`De-ricked in ${taken} seconds!`);
-    }
-}
 
-// start game
-for(let i = 0; i < clickers; i++){
-    addClicker();
-}
+
+// const gridSize = 10;
+// const grid = [];
+
+// for(let u = 1/ctx.canvas.width; u <= 1; i++){
+//     for(let v = 1/ctx.canvas.height; v <= 1; v++)
+// }
