@@ -20,7 +20,6 @@ for(let i = 0; i < 550; i++) {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2, false);
     ctx.fill();
-
 }
 
 
