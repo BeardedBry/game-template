@@ -10,13 +10,20 @@ ctx.fillStyle = "grey";
 ctx.fillRect(0, 0, w, h);
 
 const center = w/2;
-ctx.textAlign = "center";
-ctx.fillStyle =  "black";
-for(let i = 1; i < 11; i++){
-    ctx.fillText("text in game", center, i * 40);
+
+const img = new Image();
+img.src = "res/images/rick.png";
+img.addEventListener("load", draw, false);
+
+function draw(){
+    for(let i = 0; i < 1; i++){
+        const x = Math.random() * w - 50;
+        const y = Math.random() * h - 100;
+        let scale = Math.min(Math.random(), .25); // returns number between 0 and 1
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale, w/2, h/2, 100,100);
+    }
 }
 
-ctx.strokeText("stroked text", center, h-30);
 
 // const gridSize = 10;
 // const grid = [];
